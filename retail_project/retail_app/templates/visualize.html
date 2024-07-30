@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analyse des Tendances de Vente</title>
+    <style>
+        /* Reset de base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Styles pour le corps et le fond */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f9fa;
+            /* Gris très clair */
+            color: #212529;
+            /* Gris foncé */
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        /* Conteneur principal */
+        .container {
+            max-width: 800px;
+            background-color: #ffffff;
+            /* Blanc */
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            /* Ombre légère */
+            padding: 40px;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: #dc3545;
+            /* Rouge */
+            margin-bottom: 20px;
+        }
+
+        nav {
+            margin-bottom: 20px;
+        }
+
+        nav a {
+            color: #007bff;
+            /* Bleu vif */
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 1.2rem;
+            transition: color 0.3s ease;
+            /* Transition de couleur */
+        }
+
+        nav a:hover {
+            color: #0056b3;
+            /* Bleu foncé au survol */
+        }
+
+        img {
+            max-width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            /* Ombre légère */
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>"Analyse des Tendances de Vente: Quantités, Prix et Clients"</h1>
+        <nav>
+            <a href="{% url 'home' %}">Page d'Accueil</a> |
+            <a href="{% url 'predict_retail' %}">"Prédictions d'Achat"</a> |
+            <a href="{% url 'visualize_retail' %}">"Analyse des Tendances de Vente"</a>
+        </nav>
+        <img src="data:image/png;base64,{{ plot_uri }}" alt="Retail Data Plot">
+    </div>
+</body>
+
+</html>

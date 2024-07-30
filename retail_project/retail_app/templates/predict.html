@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prédiction d'Achat</title>
+    <style>
+        /* Reset de base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Styles pour le corps et le fond */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f0f0;
+            /* Gris très clair */
+            color: #333333;
+            /* Gris foncé */
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 600px;
+            background-color: #ffffff;
+            /* Blanc */
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            /* Ombre légère */
+            padding: 40px;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: #007bff;
+            /* Bleu vif */
+            margin-bottom: 20px;
+        }
+
+        nav {
+            margin-bottom: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #007bff;
+            /* Bleu vif */
+            margin: 0 15px;
+            font-size: 1.2rem;
+            transition: color 0.3s ease;
+            /* Transition de couleur */
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+            color: #0056b3;
+            /* Bleu foncé au survol */
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        form button {
+            padding: 10px 20px;
+            font-size: 1.2rem;
+            background-color: #007bff;
+            /* Bleu vif */
+            color: #ffffff;
+            /* Blanc */
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            /* Transition de couleur de fond */
+        }
+
+        form button:hover {
+            background-color: #0056b3;
+            /* Bleu foncé au survol */
+        }
+
+        form p {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Prédiction de la quantité</h1>
+        <nav>
+            <a href="{% url 'home' %}">Page d'Accueil</a> |
+            <a href="{% url 'predict_retail' %}">Prédiction d'Achat</a> |
+            <a href="{% url 'visualize_retail' %}">Analyse des Tendances de Vente</a>
+        </nav>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Prédire</button>
+        </form>
+    </div>
+</body>
+
+</html>

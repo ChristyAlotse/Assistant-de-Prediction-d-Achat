@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Résultat de la prédiction</title>
+    <style>
+        /* Reset de base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Styles pour le corps et le fond */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f9fa;
+            /* Gris très clair */
+            color: #212529;
+            /* Gris foncé */
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 600px;
+            background-color: #ffffff;
+            /* Blanc */
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            /* Ombre légère */
+            padding: 40px;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: #007bff;
+            /* Bleu vif */
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.6rem;
+            margin-bottom: 20px;
+            color: #28a745;
+            /* Vert */
+        }
+
+        a {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            /* Bleu vif */
+            color: #ffffff;
+            /* Blanc */
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+            /* Transition de couleur de fond */
+        }
+
+        a:hover {
+            background-color: #0056b3;
+            /* Bleu foncé au survol */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Résultat de la prédiction d'achat</h1>
+        <p>La quantité à acheter est : {{ result }}</p>
+        <a href="{% url 'home' %}">Retour à la page d'accueil</a>
+    </div>
+</body>
+
+</html>
